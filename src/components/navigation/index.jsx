@@ -1,13 +1,5 @@
 import React from 'react';
-import routes from '../../constants/routes';
-
-const navLinks = [
-	{
-		label: 'home',
-		id: 1,
-		url: routes.home
-	}
-]
+import links from './links';
 
 function Navigation() {
 	return (
@@ -15,7 +7,7 @@ function Navigation() {
 			<a href="/">Logo</a>
 
 			<ul>
-				{ navLinks.map(({id, label}) => <li key={id}>{label}</li>) }
+				{ links.map(({id, label, url}) => <li key={url}>{label}</li>) }
 			</ul>
 
 		</div>
