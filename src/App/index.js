@@ -1,17 +1,12 @@
 import React from 'react';
 import './App.scss';
+import { renderRoutes } from '../routes';
 import Navigation from '../components/navigation';
-import Home from '../routes/Home';
-import UserProfile from '../routes/UserProfile';
-import NotFound from '../routes/NotFound';
 import {
 	BrowserRouter as Router,
-	Switch,
-	Route
+	Switch
 } from "react-router-dom";
-import routes from '../constants/routes';
-import RouteGuard from '../components/routeGuard';
-import Login from '../routes/Login';
+
 
 function App() {
 	return (
@@ -21,18 +16,7 @@ function App() {
 			</header>
 			<Router>
 				<Switch>
-					<Route path={routes.home} exact={true}>
-						<Home />
-					</Route>
-					<Route path={routes.login}>
-						<Login />
-					</Route>
-					<RouteGuard path={routes.profile}>
-						<UserProfile />
-					</RouteGuard>
-					<Route path="*">
-						<NotFound />
-					</Route>
+					{renderRoutes.map(route => <route.component key={route.config.path} render={() => route.render} {...route.config}/>)}
 				</Switch>
 			</Router>
 		</div>
