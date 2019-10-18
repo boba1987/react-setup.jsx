@@ -12,9 +12,9 @@ const RouteGuard = ({ render: renderChild, ...rest }) => {
 		<Route
         	{...rest}
         	render={({ location }) =>
-          	isAuthenticated ? (
-            	renderChild()
-          	) : (
+				isAuthenticated ? (
+					renderChild()
+				) : (
             	<Redirect
               		to={{
 						pathname: routes.login,
