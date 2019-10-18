@@ -1,5 +1,7 @@
 import React from 'react';
 
 export default function Login() {
-  return <></>;
+  return <>
+    <h1>Login page</h1>
+  </>;
 }

@@ -1,8 +1,11 @@
 import React from 'react';
+import routes from '../../constants/routes';
 
 const navLinks = [
 	{
-		label: 'home'
+		label: 'home',
+		id: 1,
+		url: routes.home
 	}
 ]
 
@@ -12,7 +15,7 @@ function Navigation() {
 			<a href="/">Logo</a>
 
 			<ul>
-				{ navLinks.map(navItem => <li>{navItem.label}</li>) }
+				{ navLinks.map(({id, label}) => <li key={id}>{label}</li>) }
 			</ul>
 
 		</div>
