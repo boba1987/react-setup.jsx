@@ -6,14 +6,14 @@ import {
 import routes from '../../constants/routes';
 import localstore from '../../services/localstore';
 
-const RouteGuard = ({ children, ...rest }) => {
+const RouteGuard = ({ render: renderChild, ...rest }) => {
 	const isAuthenticated = !!localstore.getItem('token');
     return (
 		<Route
         	{...rest}
         	render={({ location }) =>
           	isAuthenticated ? (
-            	children
+            	renderChild()
           	) : (
             	<Redirect
               		to={{

@@ -2,10 +2,10 @@ import React from 'react';
 import { Route } from "react-router-dom";
 import routes from '../constants/routes';
 import RouteGuard from '../components/routeGuard';
-import Home from '../routes/Home';
-import UserProfile from '../routes/UserProfile';
-import NotFound from '../routes/NotFound';
-import Login from '../routes/Login';
+import Home from './Home';
+import UserProfile from './UserProfile';
+import NotFound from './NotFound';
+import Login from './Login';
 
 export const renderRoutes = [
 	{
@@ -25,7 +25,7 @@ export const renderRoutes = [
 	},
 	{
 		component: RouteGuard,
-		render: UserProfile,
+		render: <UserProfile />,
 		config: {
 			path: routes.profile
 		}

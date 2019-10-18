@@ -16,7 +16,8 @@ function App() {
 			</header>
 			<Router>
 				<Switch>
-					{renderRoutes.map(route => <route.component key={route.config.path} render={() => route.render} {...route.config}/>)}
+					{renderRoutes.map(route => 
+						<route.component key={route.config.path} render={() => route.render} {...route.config}/>)}
 				</Switch>
 			</Router>
 		</div>
