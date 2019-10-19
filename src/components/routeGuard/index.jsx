@@ -4,7 +4,7 @@ import {
 	Redirect
 } from "react-router-dom";
 import routes from '../../constants/routes';
-import localstore from '../../services/localstore';
+import localstore from '../../services/localstoreService';
 
 const RouteGuard = ({ render: renderChild, ...rest }) => {
 	const isAuthenticated = !!localstore.getItem('token');
