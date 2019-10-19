@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { renderRoutes } from '../routes';
+import renderRoutes from '../routes';
 import Navigation from '../components/navigation';
 import {
 	BrowserRouter as Router,
