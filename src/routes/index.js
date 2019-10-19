@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from "react-router-dom";
+import uniqid from 'uniqid';
 import routes from '../constants/routes';
 import RouteGuard from '../components/routeGuard';
 import Home from './Home';
@@ -8,36 +9,8 @@ import NotFound from './NotFound';
 import Login from './Login';
 
 export const renderRoutes = [
-	{
-		component: Route,
-		render: <Home />,
-		config: {
-			exact: true,
-			path: routes.home
-		}
-	},
-	{
-		component: Route,
-		render: <Login />,
-		config: {
-			path: routes.login
-		}
-	},
-	{
-		component: RouteGuard,
-		render: <UserProfile />,
-		config: {
-			path: routes.profile
-		}
-	},
-	{
-		component: Route,
-		render: <NotFound />,
-		config: {
-			path: "*"
-		}
-	}
-]
-
-export default renderRoutes.map(route => 
-    <route.component key={route.config.path} render={() => route.render} {...route.config}/>);
+    <Route key={uniqid()} render={() => <Home />} path={routes.home} exact={true} />,
+    <Route key={uniqid()} render={() => <Login />} path={routes.login} />,
+    <RouteGuard key={uniqid()} render={() => <UserProfile />}  path={routes.profile} />,
+    <Route key={uniqid()} render={() => <NotFound />} path="*" />
+];

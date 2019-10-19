@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import routes from '../routes';
+import { renderRoutes } from '../routes';
 import Navigation from '../components/navigation';
 import {
 	BrowserRouter as Router,
@@ -16,7 +16,7 @@ function App() {
 			</header>
 			<Router>
 				<Switch>
-					{ routes }
+					{ renderRoutes }
 				</Switch>
 			</Router>
 		</div>
