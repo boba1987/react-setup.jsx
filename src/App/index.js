@@ -11,10 +11,10 @@ import {
 function App() {
 	return (
 		<div className="App">
-			<header>
-				<Navigation />
-			</header>
 			<Router>
+				<header>
+					<Navigation />
+				</header>
 				<Switch>
 					{ renderRoutes }
 				</Switch>

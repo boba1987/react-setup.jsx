@@ -1,5 +1,6 @@
 import React from 'react';
 import links from './links';
+import { NavLink } from 'react-router-dom';
 
 function Navigation() {
 	return (
@@ -7,7 +8,10 @@ function Navigation() {
 			<a href="/">Logo</a>
 
 			<ul>
-				{ links.map(({id, label, url}) => <li key={url}>{label}</li>) }
+				{ links.map(({label, to}, index) =>
+					<li key={index}>
+						<NavLink to={to} activeClassName="selected">{label}</NavLink>
+					</li>) }
 			</ul>
 
 		</div>
