@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { renderRoutes } from '../routes';
+import routes from '../routes';
 import Navigation from '../components/navigation';
 import {
 	BrowserRouter as Router,
@@ -16,8 +16,7 @@ function App() {
 			</header>
 			<Router>
 				<Switch>
-					{renderRoutes.map(route => 
-						<route.component key={route.config.path} render={() => route.render} {...route.config}/>)}
+					{ routes }
 				</Switch>
 			</Router>
 		</div>

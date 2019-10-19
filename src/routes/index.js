@@ -38,3 +38,6 @@ export const renderRoutes = [
 		}
 	}
 ]
+
+export default renderRoutes.map(route => 
+    <route.component key={route.config.path} render={() => route.render} {...route.config}/>);
