@@ -1,5 +1,5 @@
 import React from 'react';
-import links from './links';
+import { pageLinks } from '../../routes/config';
 import { NavLink } from 'react-router-dom';
 
 function Navigation() {
@@ -8,9 +8,9 @@ function Navigation() {
 			<a href="/">Logo</a>
 
 			<ul>
-				{ links.map(({label, to}, index) =>
+				{ pageLinks.map(({label, to, exact}, index) =>
 					<li key={index}>
-						<NavLink to={to} activeClassName="selected">{label}</NavLink>
+						<NavLink to={to} exact={exact} activeClassName="selected">{label}</NavLink>
 					</li>) }
 			</ul>
 

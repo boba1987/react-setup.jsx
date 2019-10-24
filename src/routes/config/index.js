@@ -5,22 +5,28 @@ import UserProfile from '../UserProfile';
 import NotFound from '../NotFound';
 import Login from '../Login';
 
-export default [
+export const pageLinks = [
     {
+        label: 'home',
+        to: routes.home,
+        exact: true,
         path: routes.home,
         component: Home,
-        config: {
-            exact: true
-        }
     },
     {
-        path: routes.login,
-        component: Login
-    },
-    {
+        label: 'profile',
+        to: routes.profile,
         path: routes.profile,
         tag: RouteGuard,
         component: UserProfile
+    },
+]
+
+export default [
+    ...pageLinks,
+    {
+        path: routes.login,
+        component: Login
     },
     {
         path: "*",
