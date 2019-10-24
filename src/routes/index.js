@@ -7,7 +7,7 @@ export default routesConfig.map((route, index) => {
     return (<Tag 
         key={index}
         path={route.path}
-        {...route.config}
+        exact={route.exact}
         render={props => (
             <route.component {...props} routes={route.routes} />
         )}
