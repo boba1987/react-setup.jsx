@@ -8,7 +8,7 @@ export default routesConfig.map((route, index) => {
         key={index}
         path={route.path}
         exact={route.exact}
-        render={props => (
+        render={(props?: any) => (
             <route.component {...props} routes={route.routes} />
         )}
     />)

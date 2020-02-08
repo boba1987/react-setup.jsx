@@ -1,11 +1,18 @@
-export default async ({url, headers, data, method})=> {
+interface RequestObject {
+    url: string,
+    headers: any,
+    data?: object,
+    method?: string
+}
+
+export default async ({url, headers, data, method}: RequestObject)=> {
     try {
         const response = await fetch(
             url,
             {
                 method: method || 'GET',
-                headers: {...headers},
-                body: ()=> data ? JSON.stringify(data) : undefined
+                headers,
+                body: data ? JSON.stringify(data) : undefined
             }
         )
 
